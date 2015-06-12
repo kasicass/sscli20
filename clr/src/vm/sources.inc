@@ -19,10 +19,7 @@
 !if "$(FEATURE_PAL)" != "1" || "$(ROTOR_TOOLSET)" == "MSVC"
 
 # WarningControl.h disables too many warnings.  VM folder will not use it.
-COMPILER_WARNINGS       =
-!if "$(_TGTCPU)"=="i386"
-COMPILER_WARNINGS       = $(COMPILER_WARNINGS) -W4
-!endif
+COMPILER_WARNINGS       =-wd4800
 
 !endif
 

@@ -18,7 +18,6 @@ NO_NTDLL			=1
 !if "$(FEATURE_PAL)" != "1" || "$(ROTOR_TOOLSET)" == "MSVC"
 
 # WarningControl.h disables too many warnings.  classlibnative/float will not use it.
-COMPILER_WARNINGS	=/W4
 
 # Get the FPU intrinics for sin, cos, etc.
 !if $(FREEBUILD)

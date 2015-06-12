@@ -40,13 +40,6 @@ if "%_BUILDTYPE%"=="prf" set MSVCRT_DLL_NAME=msvcr%ROTOR_TOOLSET_VERSION%.dll
 
 if not "%MSVCDIR%" == "" set MSVCRT_DLL_FULL_NAME=%windir%\system32\%MSVCRT_DLL_NAME%
 
-if not "%ROTOR_TOOLSET_VERSION%" == "80" (
-    xcopy /d /y %MSVCRT_DLL_FULL_NAME% %_NTTREE% >>build%BUILD_ALT_DIR%.log 2>&1
-    if ERRORLEVEL 1 goto ReportError
-    xcopy /d /y %MSVCRT_DLL_FULL_NAME% %_NTTREE%\sdk\bin\ >>build%BUILD_ALT_DIR%.log 2>&1
-    if ERRORLEVEL 1 goto ReportError
-)
-
 :BuildSuccess
 echo Build successful.
 endlocal

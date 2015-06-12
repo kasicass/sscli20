@@ -34,12 +34,18 @@ if "%1"=="mingw" goto MinGW
 if "%1"=="lkgvc" goto LastKnownGood
 
 REM Check to to see if MSVCDIR is set
-IF "%MSVCDIR%"=="" for /f "delims=," %%i in ("%VS80COMNTOOLS%") do call :TRYSETMSVC "%%~i"
+IF "%MSVCDIR%"=="" for /f "delims=," %%i in ("%VS90COMNTOOLS%") do call :TRYSETMSVC "%%~i"
 IF "%MSVCDIR%"=="" goto MSVCDirNotSet
 
 REM Make sure MSVCDIR is using the short names
 Call :ShortName "%MSVCDIR%"
 set MSVCDIR=%RESULT%
+
+REM Set the SDK path
+if "%ROTOR_WINSDKDIR%"=="" set ROTOR_WINSDKDIR=%WindowsSdkDir%
+if "%ROTOR_WINSDKDIR%"=="" set ROTOR_WINSDKDIR=%MSVCDIR%\PlatformSDK
+call :ShortName "%ROTOR_WINSDKDIR%"
+set ROTOR_WINSDKDIR=%RESULT%
 
 set ROTOR_TOOLSET=MSVC
 

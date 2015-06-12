@@ -40,9 +40,10 @@ Set ("COFFBASE_TXT_FILE", catfile (Get("ROTOR_DIR"), "env", "*", "coffbase.txt")
 
 if (my $msvcdir = Get("MSVCDir")) {
     # These are the INCLUDE paths used during the primary bootstrap.
-    Set("SDK_INC_PATH_BOOT", catdir ($msvcdir, "PlatformSDK", "include"));
+    my $winsdkdir = Get("ROTOR_WINSDKDIR");
+    Set("SDK_INC_PATH_BOOT", catdir ($winsdkdir, "include"));
     Set("CRT_INC_PATH_BOOT", catdir ($msvcdir, "Include"));
-    Set("SDK_LIB_PATH", catdir ($msvcdir, "PlatformSDK", "lib"));
+    Set("SDK_LIB_PATH", catdir ($winsdkdir, "lib"));
     Set("CRT_LIB_PATH", catdir ($msvcdir, "lib"));
     Set("VC_BIN_PATH", catdir ($msvcdir, "bin"));
 }

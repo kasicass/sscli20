@@ -565,6 +565,7 @@ sub SetVars
     }
     chomp ($platform_os);
     chomp ($platform_os_version);
+		$platform_os_version = "5.1";
     if (! $platform_os_version ) {
         CorFail ("Could not get platform OS version");
     }

@@ -3063,7 +3063,7 @@ CompletionPortThreadStartLoop:
                 // if I'm the last thread, don't die until no activity for certain time period.
                 // A race condition may occur when there are multiple CP worker threads time out
                 // on waiting on the IOCP. Since the actual decrement to NumCPThreads
-                // “InterlockedDecrement(&NumCPThreads);” occurs at the end of this function,
+                // “InterlockedDecrement(&NumCPThreads);?occurs at the end of this function,
                 // none of the time out CP worker thread thinks it is the last thread,
                 // so all of them exit and cause NumCPThreads to become zero.
                 // An additional code block is added at the end of this function to check if

@@ -487,10 +487,9 @@ int Thread::GetThreadPriority()
 /*
     After SuspendThread returns, can the suspended thread continue to execute code in user mode?
 
-    [David Cutler] The suspended thread cannot execute any more user code, but it might be currently “running”
-    on a logical processor whose other logical processor is currently actually executing another thread.
+    [David Cutler] The suspended thread cannot execute any more user code, but it might be currently “running?    on a logical processor whose other logical processor is currently actually executing another thread.
     In this case the target thread will not suspend until the hardware switches back to executing instructions
-    on its logical processor. In this case even the memory barrier would not necessarily work – a better solution
+    on its logical processor. In this case even the memory barrier would not necessarily work ?a better solution
     would be to use interlocked operations on the variable itself.
 
     After SuspendThread returns, does the store buffer of the CPU for the suspended thread still need to drain?

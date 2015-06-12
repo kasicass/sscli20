@@ -15,7 +15,6 @@
 
 !if "$(FEATURE_PAL)" != "1" || "$(ROTOR_TOOLSET)" == "MSVC"
 COMPILER_WARNINGS       =
-MSC_WARNING_LEVEL   =/W4
 !else
 MSC_WARNING_LEVEL=-Wall -Werror
 COMPILER_WARNINGS=-Wall -Werror

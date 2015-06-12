@@ -1270,6 +1270,7 @@ Abstract:
 #undef _I64_MIN
 #undef _I64_MAX
 #undef _UI64_MAX
+#include <vs9.h>
 //
 // Pull in standard Win32 declarations
 //

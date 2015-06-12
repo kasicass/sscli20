@@ -13,7 +13,6 @@
  
 # Do at beginning so settings pervade build system
 _CORFLAVOR              =wks1
-MSC_WARNING_LEVEL       =-Wp64
 
 !include ..\sources.inc
 
